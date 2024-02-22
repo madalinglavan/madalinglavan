@@ -17,3 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+   
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        document.querySelector('.first-page-show').style.display = 'none';
+        document.querySelector('#home').classList.add('active');
+    }
+});
