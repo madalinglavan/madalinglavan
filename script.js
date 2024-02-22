@@ -70,9 +70,6 @@ function updateTime() {
     }
 });
 
-
-//chatbot
-       
-                        
+             
                           
                         

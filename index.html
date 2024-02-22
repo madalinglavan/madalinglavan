@@ -23,10 +23,10 @@
             
             <ul class="nav-links">
                 <li><a href="#about-me" data-text="Madalin"><i class="fas fa-user"></i></a></li>
-                <li><a href="#skills" data-text="Skills"><i class="fas fa-lightbulb"></i></a></li>
-                <li><a href="#projects" data-text="Projects"><i class="fas fa-folder-open"></i></a></li>
-                <li><a href="#contact" data-text="Contact"><i class="fas fa-envelope"></i></a></li>
-                <li><a href="#chatBot" data-text="QandA"><i class="fas fa-folder-open"></i></a></li>
+                <li><a href="#skills" data-text="Skills"><i class="fa-solid fa-hands"></i></a></li>
+                <li><a href="#projects" data-text="Projects"><i class="fa-regular fa-folder"></i></a></li>
+                <li><a href="#contact" data-text="Contact"><i class="fa-regular fa-envelope"></i></a></li>
+                <li><a href="#chatBot" data-text="QandA"><i class="fa-solid fa-question"></i></a></li>
                 
             </ul>
         </nav>
@@ -261,22 +261,141 @@ function clearContainer(container) {
         <script src="script.js"></script>
       </main>
      <div class="main-displayed">
-      <div class="widget clock-container">
-        <div class="time" id="time"></div>
-        <div class="date" id="date"></div>
-    </div>
-    <div class="widget weather-widget">
-        <h5 id="location"></h5>
-        <div class="weather-icon">
-            <img src="" alt="Icon">
-        </div>
-        <div class="weather-info">
-            <div class="weather-details">
-                <p class="temperature"><span></span>°C</p>
-                <p class="description"><span></span></p>
+            <div class="widgets-zone">
+                <div class="widget weather-widget">
+                    <h5 id="location"></h5>
+                    <div class="weather-icon">
+                        <img src="" alt="Icon">
+                    </div>
+                    <div class="weather-info">
+                        <div class="weather-details">
+                            <p class="temperature"><span></span>°C</p>
+                            <p class="description"><span></span></p>
+                        </div>
+                    </div>
+                    <div class="widget clock-container">
+                        <div class="time" id="time"></div>
+                        <div class="date" id="date"></div>
+                    </div>
+                </div>
+                <div id="intro-text-container">
+                    <p id="intro-text"></p>
+                </div>
+                
+                <script>
+                    const text = "Welcome to my jungle! ";
+                    let charIndex = 0;
+                    const textContainer = document.getElementById("intro-text");
+                    function type() {
+                        if (charIndex < text.length) {
+                            textContainer.textContent += text[charIndex];
+                            charIndex++;
+                        } else {
+                            clearInterval(interval); 
+                        }
+                    }
+                    const interval = setInterval(type, 100);
+                </script>
+                <div class="phone">
+                    <a href="tel:0032467674870"><i class="fa-solid fa-phone">&nbsp;&nbsp;Call me today</i></a>
+                    <div id="stats-container">                                         
+                        <h1><i class="fa-solid fa-chart-simple"></i>&nbsp;&nbsp;Statistici Profesionale</h1>
+                        <div id="stats">
+                            <p>Programare: <span id="experience">0</span></p>
+                            <p>Clienți: <span id="clients">0</span></p>
+                            <p>Locuri disponibile: <span id="warranty">0</span> </p>
+                        </div>
+                               <script>
+                                
+                                    //profesional stats
+                                    function animateNumbers(finalValues) {
+                                    const duration = 5000;
+                                    const fps = 30; 
+        
+                                    const increment = {};
+                                    const steps = {};
+        
+                                    for (const key in finalValues) {
+                                        increment[key] = finalValues[key] / (duration / 1000 * fps);
+                                        steps[key] = 0;
+                                    }
+        
+                                    function updateValues() {
+                                        let allValuesReached = true;
+        
+                                        for (const key in finalValues) {
+                                            steps[key] += increment[key];
+        
+                                            if (steps[key] <= finalValues[key]) {
+                                                allValuesReached = false;
+                                            }
+        
+                                            document.getElementById(key).innerText = Math.round(steps[key]);
+                                        }
+        
+                                        if (!allValuesReached) {
+                                            requestAnimationFrame(updateValues);
+                                        }
+                                    }
+        
+                                    updateValues();
+                                    }
+        
+                                    const finalValues = {
+                                    experience: 2,
+                                    clients: 5,
+                                    warranty: 5,
+                                    };
+        
+                                    setTimeout(() => {
+                                    animateNumbers(finalValues);
+                                    }, 1000);
+                                        
+                   
+                               </script>   
+                    </div>   
+                </div>
             </div>
-        </div>
-    </div>
+            <div class="slideshow-container">
+                <div class="slides">
+                  <img src="img/0 (170).jpg" alt="Image 1">
+                  <img src="img/dragobete afis.png" alt="Image 2">
+                  <img src="img/IMG20230316102314.jpg" alt="Image 3">
+                  <img src="img/logo.png" alt="Image 4">
+                  <img src="img/madalin glavan.jpg" alt="Image 5">
+                  <!-- Adaugă mai multe imagini aici -->
+                </div>
+              
+                <!-- Buton pentru slide-ul din stânga -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <!-- Buton pentru slide-ul din dreapta -->
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <script>
+                    let slideIndex = 0;
+
+                    function showSlides() {
+                    const slides = document.querySelector('.slides');
+                    slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+                    }
+
+                    function plusSlides(n) {
+                    slideIndex += n;
+                    const slides = document.querySelectorAll('.slides img');
+                    if (slideIndex >= slides.length) {
+                        slideIndex = 0;
+                    } else if (slideIndex < 0) {
+                        slideIndex = slides.length - 2;
+                    }
+                    showSlides();
+                    }
+
+                    // Afiseaza slideshow-ul la incarcarea paginii
+                    showSlides();
+
+                </script>
+            </div>
+              
+            
      </div>
 </body>
 </html>
