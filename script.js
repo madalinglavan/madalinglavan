@@ -70,6 +70,139 @@ function updateTime() {
     }
 });
 
-             
+document.addEventListener('DOMContentLoaded', function () {
+  const newsContainers = document.querySelectorAll('.news > div');
+
+  newsContainers.forEach(container => {
+      const title = container.querySelector('h3');
+      const paragraph = container.querySelector('p');
+      const media = container.querySelector('img') || container.querySelector('video');
+
+      title.addEventListener('click', function () {
+          if (paragraph.style.display === 'none' || paragraph.style.display === '') {
+              paragraph.style.display = 'block';
+              if (media) {
+                  media.style.display = 'block';
+              }
+          } else {
+              paragraph.style.display = 'none';
+              if (media) {
+                  media.style.display = 'none';
+              }
+          }
+      });
+  });
+});   
+
+
+
+    //profesional stats
+    function animateNumbers(finalValues) {
+      const duration = 5000;
+      const fps = 30; 
+
+      const increment = {};
+      const steps = {};
+
+      for (const key in finalValues) {
+          increment[key] = finalValues[key] / (duration / 1000 * fps);
+          steps[key] = 0;
+      }
+
+      function updateValues() {
+          let allValuesReached = true;
+
+          for (const key in finalValues) {
+              steps[key] += increment[key];
+
+              if (steps[key] <= finalValues[key]) {
+                  allValuesReached = false;
+              }
+
+              document.getElementById(key).innerText = Math.round(steps[key]);
+          }
+
+          if (!allValuesReached) {
+              requestAnimationFrame(updateValues);
+          }
+      }
+
+      updateValues();
+      }
+
+      const finalValues = {
+      experience: 2,
+      clients: 5,
+      warranty: 15,
+      };
+
+      setTimeout(() => {
+      animateNumbers(finalValues);
+      }, 1000);
                           
                         
+      const text = "Welcome to my jungle! ";
+      let charIndex = 0;
+      const textContainer = document.getElementById("intro-text");
+      function type() {
+          if (charIndex < text.length) {
+              textContainer.textContent += text[charIndex];
+              charIndex++;
+          } else {
+              clearInterval(interval); 
+          }
+      }
+      const interval = setInterval(type, 100);
+
+//video galery
+
+function changeVideo(videoSrc) {
+  var videoPlayer = document.getElementById('video-player');
+  videoPlayer.src = videoSrc;
+  videoPlayer.load();
+  videoPlayer.play();
+}
+
+window.onload = function () {
+var playlistItems = document.querySelectorAll('#playlist li');
+
+if (playlistItems.length > 0) {
+  var firstVideo = playlistItems[0].textContent;
+  console.log('Primul videoclip din lista:', firstVideo);
+  var videoSrc = 'video/' + firstVideo + '.mp4';
+
+  document.getElementById('video-container').addEventListener('click', function() {
+      changeVideo(videoSrc);
+  });
+} else {
+  console.error('Nu există elemente în lista de redare.');
+}
+};
+
+ 
+          function changeVideo(videoSrc, videoDescription) {
+var videoPlayer = document.getElementById('video-player');
+videoPlayer.src = videoSrc;
+videoPlayer.load();
+videoPlayer.play();
+
+var descriptionElement = document.getElementById('video-description');
+descriptionElement.textContent = videoDescription;
+}
+
+window.onload = function () {
+var playlistItems = document.querySelectorAll('#playlist li');
+
+if (playlistItems.length > 0) {
+  var firstVideo = playlistItems[0].textContent;
+  var firstVideoDescription = "Descrierea pentru primul videoclip...";
+  var videoSrc = 'video/' + firstVideo + '.mp4';
+  
+  document.getElementById('video-container').addEventListener('click', function() {
+      changeVideo(videoSrc, firstVideoDescription);
+  });
+} else {
+  console.error('Nu există elemente în lista de redare.');
+}
+};
+

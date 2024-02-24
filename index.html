@@ -71,179 +71,179 @@
           <div class="category-container" id="category-container"> categories</div>
           
       </div>
-      <script>
-        const chatIntroduction = "Pick one category and choese the question! I`m happy to meet you! Q and A  #havefun!";
-        let waitingForNextQuestion = false;
+            <script>
+            const chatIntroduction = "Pick one category and choese the question! I`m happy to meet you! Q and A  #havefun!";
+            let waitingForNextQuestion = false;
 
-        const categories = [
-            {
-              name: "HTML, CSS, JS Projects",
-        questions: [
-            "What recent projects have you worked on in HTML, CSS, and JavaScript?",
-            "What is your experience using HTML and CSS for web design?",
-            "Which specific JavaScript technologies do you use in your projects?",
-            "What inspires you to choose specific themes or concepts for your recent projects?",
-            "How do you approach the process of designing a web interface, from idea to implementation?",
-            "Have you ever faced major challenges in developing a project, and how did you overcome them?"
-        ],
-        answers: [
-            "I have recently worked on projects featured on the Live Projects page.",
-            "I have extensive experience in developing web interfaces with HTML and CSS.",
-            "I use JavaScript (ES6+) to create interactive and appealing web interfaces.",
-            "I am inspired by the diversity and innovation around me, and the themes of my projects reflect this diversity.",
-            "I start by understanding the purpose and target audience, then create wireframes and prototypes before implementation.",
-            "Of course, each project comes with its own challenges. I tackle these situations through research, collaboration, and continuous improvement."
-        ]
-    },
-    {
-        name: "Photoshop and Illustrator",
-        questions: [
-            "How do you use Photoshop for web design?",
-            "What are your main skills in Illustrator?",
-            "How do you integrate your knowledge of Photoshop and Illustrator into web project development?",
-            "What are the main concepts you learned in your Photoshop and Illustrator specialization courses?",
-            "How do you use animations in your web projects, and how do you think they add value to your users' experience?",
-            "How do you approach the creative process in web design?",
-            "What are your favorite features in Adobe Illustrator?",
-            "How do you integrate illustrations into your design projects?"
-        ],
-        answers: [
-            "I use Photoshop to create graphic elements and background images for websites.",
-            "In Illustrator, I specialize in creating vector graphics and illustrations.",
-            "I use Photoshop and Illustrator to create custom graphic elements and enhance the overall look of my web projects.",
-            "In my courses, I learned about image manipulation, creating vector illustrations, and applying special effects for visually impressive design.",
-            "Animations are an essential part of my creativity. I apply them strategically to highlight certain elements, enhancing interactivity and visual appeal of my web pages.",
-            "I always start with a careful analysis of the project's requirements and goals.",
-            "I enjoy working with the shape creation tools in Illustrator.",
-            "Illustrations add a distinctive and captivating touch to my design."
-        ]
-    },
-    {
-        name: "Coding and Programming",
-        questions: [
-            "What is your preferred programming language and why?",
-            "Can you tell me about a coding project that has been a real success for you?",
-            "How do you ensure that your code is efficient and easy to maintain?",
-            "What particularly attracted you to the field of coding and programming?",
-            "How do you see your long-term evolution in the IT field, and what goals do you set for yourself to achieve?"
-        ],
-        answers: [
-            "I enjoy working with JavaScript due to its versatility.",
-            "With joy, I can share about the recent project, named L'Authentik, which I officially started working on starting January 4, 2024.",
-            "I use clean code principles and conduct regular code reviews.",
-            "Fascination for computers and the ability to manipulate and create things brought me into the world of coding.",
-            "I see my evolution as a continuous learning and application journey, with long-term goals of becoming an expert in certain technologies and contributing to significant projects."
-        ]
-    },
-    {
-        name: "Installation and Configuration of Programs",
-        questions: [
-            "How do you choose the right software for a particular project?",
-            "What is your process for installing and configuring a new application?",
-            "How do you manage software updates and compatibility?"
-        ],
-        answers: [
-            "I analyze the project requirements and choose the right tools for the task.",
-            "Installation and configuration are integral parts of each project, ensuring everything works efficiently.",
-            "Regular updates are managed, and compatibility is carefully checked."
-        ]
-    },
-    {
-        name: "Maintenance and Repairs",
-        questions: [
-            "How do you approach maintaining a site after launch?",
-            "How do you handle errors and security issues in your websites?",
-            "What backup strategies do you use to protect data?"
-        ],
-        answers: [
-            "I ensure that the site is updated and functions correctly through constant monitoring.",
-            "Errors are quickly identified and resolved, and security is a priority.",
-            "Regular backups are essential to protect data against losses."
-        ]
-    },
-    {
-        name: "Pricing",
-        questions: [
-            "What are your standard rates for web design projects?",
-            "Are you willing to offer exclusivity?"
-        ],
-        answers: [
-            "My rates vary depending on the complexity and specific requirements of each project. For a customized quote, please contact me.",
-            "Yes, I am willing to offer exclusivity. I would be delighted to be part of a team!"
-        ]
+            const categories = [
+                {
+                name: "HTML, CSS, JS Projects",
+            questions: [
+                "What recent projects have you worked on in HTML, CSS, and JavaScript?",
+                "What is your experience using HTML and CSS for web design?",
+                "Which specific JavaScript technologies do you use in your projects?",
+                "What inspires you to choose specific themes or concepts for your recent projects?",
+                "How do you approach the process of designing a web interface, from idea to implementation?",
+                "Have you ever faced major challenges in developing a project, and how did you overcome them?"
+            ],
+            answers: [
+                "I have recently worked on projects featured on the Live Projects page.",
+                "I have extensive experience in developing web interfaces with HTML and CSS.",
+                "I use JavaScript (ES6+) to create interactive and appealing web interfaces.",
+                "I am inspired by the diversity and innovation around me, and the themes of my projects reflect this diversity.",
+                "I start by understanding the purpose and target audience, then create wireframes and prototypes before implementation.",
+                "Of course, each project comes with its own challenges. I tackle these situations through research, collaboration, and continuous improvement."
+            ]
+        },
+        {
+            name: "Photoshop and Illustrator",
+            questions: [
+                "How do you use Photoshop for web design?",
+                "What are your main skills in Illustrator?",
+                "How do you integrate your knowledge of Photoshop and Illustrator into web project development?",
+                "What are the main concepts you learned in your Photoshop and Illustrator specialization courses?",
+                "How do you use animations in your web projects, and how do you think they add value to your users' experience?",
+                "How do you approach the creative process in web design?",
+                "What are your favorite features in Adobe Illustrator?",
+                "How do you integrate illustrations into your design projects?"
+            ],
+            answers: [
+                "I use Photoshop to create graphic elements and background images for websites.",
+                "In Illustrator, I specialize in creating vector graphics and illustrations.",
+                "I use Photoshop and Illustrator to create custom graphic elements and enhance the overall look of my web projects.",
+                "In my courses, I learned about image manipulation, creating vector illustrations, and applying special effects for visually impressive design.",
+                "Animations are an essential part of my creativity. I apply them strategically to highlight certain elements, enhancing interactivity and visual appeal of my web pages.",
+                "I always start with a careful analysis of the project's requirements and goals.",
+                "I enjoy working with the shape creation tools in Illustrator.",
+                "Illustrations add a distinctive and captivating touch to my design."
+            ]
+        },
+        {
+            name: "Coding and Programming",
+            questions: [
+                "What is your preferred programming language and why?",
+                "Can you tell me about a coding project that has been a real success for you?",
+                "How do you ensure that your code is efficient and easy to maintain?",
+                "What particularly attracted you to the field of coding and programming?",
+                "How do you see your long-term evolution in the IT field, and what goals do you set for yourself to achieve?"
+            ],
+            answers: [
+                "I enjoy working with JavaScript due to its versatility.",
+                "With joy, I can share about the recent project, named L'Authentik, which I officially started working on starting January 4, 2024.",
+                "I use clean code principles and conduct regular code reviews.",
+                "Fascination for computers and the ability to manipulate and create things brought me into the world of coding.",
+                "I see my evolution as a continuous learning and application journey, with long-term goals of becoming an expert in certain technologies and contributing to significant projects."
+            ]
+        },
+        {
+            name: "Installation and Configuration of Programs",
+            questions: [
+                "How do you choose the right software for a particular project?",
+                "What is your process for installing and configuring a new application?",
+                "How do you manage software updates and compatibility?"
+            ],
+            answers: [
+                "I analyze the project requirements and choose the right tools for the task.",
+                "Installation and configuration are integral parts of each project, ensuring everything works efficiently.",
+                "Regular updates are managed, and compatibility is carefully checked."
+            ]
+        },
+        {
+            name: "Maintenance and Repairs",
+            questions: [
+                "How do you approach maintaining a site after launch?",
+                "How do you handle errors and security issues in your websites?",
+                "What backup strategies do you use to protect data?"
+            ],
+            answers: [
+                "I ensure that the site is updated and functions correctly through constant monitoring.",
+                "Errors are quickly identified and resolved, and security is a priority.",
+                "Regular backups are essential to protect data against losses."
+            ]
+        },
+        {
+            name: "Pricing",
+            questions: [
+                "What are your standard rates for web design projects?",
+                "Are you willing to offer exclusivity?"
+            ],
+            answers: [
+                "My rates vary depending on the complexity and specific requirements of each project. For a customized quote, please contact me.",
+                "Yes, I am willing to offer exclusivity. I would be delighted to be part of a team!"
+            ]
+        }
+    ];
+
+            let currentQuestionIndex = 0;
+            let currentCategoryIndex = 0;
+            const chatContainer = document.getElementById("chat-container");
+            const categoryContainer = document.getElementById("category-container");
+            const answerContainer = document.getElementById("answer-container");
+
+            function displayIntroduction() {
+                displayText(chatIntroduction);
+                setTimeout(() => {
+                    waitingForNextQuestion = true;
+                    displayCategoryButtons();
+                }, 1000);
+            }
+
+            function displayText(text) {
+                const paragraph = document.createElement('p');
+                paragraph.textContent = text;
+                chatContainer.appendChild(paragraph);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+
+            function displayCategoryButtons() {
+                categories.forEach((category, index) => {
+                    const categoryButton = document.createElement("div");
+                    categoryButton.classList.add("category-button");
+                    categoryButton.textContent = category.name;
+                    categoryButton.onclick = function () {
+                        showCategory(index);
+                    };
+                    categoryContainer.appendChild(categoryButton);
+                });
+            }
+
+            function showCategory(categoryIndex) {
+                currentCategoryIndex = categoryIndex;
+                clearContainer(chatContainer);
+                clearContainer(answerContainer);
+                displayQuestionButtons();
+            }
+
+            function displayQuestionButtons() {
+                const currentCategory = categories[currentCategoryIndex];
+                currentCategory.questions.forEach((question, index) => {
+                    const questionButton = document.createElement("div");
+                    questionButton.classList.add("question-button");
+                    questionButton.textContent = `${index + 1}. ${question}`;
+                    questionButton.onclick = function () {
+                        showAnswer(index);
+                    };
+                    chatContainer.appendChild(questionButton);
+                });
+            }
+
+            function showAnswer(questionIndex) {
+        const currentCategory = categories[currentCategoryIndex];
+        clearContainer(answerContainer);
+        const answerParagraph = document.createElement("p");
+        answerParagraph.textContent = currentCategory.answers[questionIndex];
+        answerContainer.appendChild(answerParagraph);
     }
-];
 
-        let currentQuestionIndex = 0;
-        let currentCategoryIndex = 0;
-        const chatContainer = document.getElementById("chat-container");
-        const categoryContainer = document.getElementById("category-container");
-        const answerContainer = document.getElementById("answer-container");
-
-        function displayIntroduction() {
-            displayText(chatIntroduction);
-            setTimeout(() => {
-                waitingForNextQuestion = true;
-                displayCategoryButtons();
-            }, 1000);
+    function clearContainer(container) {
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
         }
-
-        function displayText(text) {
-            const paragraph = document.createElement('p');
-            paragraph.textContent = text;
-            chatContainer.appendChild(paragraph);
-            chatContainer.scrollTop = chatContainer.scrollHeight;
-        }
-
-        function displayCategoryButtons() {
-            categories.forEach((category, index) => {
-                const categoryButton = document.createElement("div");
-                categoryButton.classList.add("category-button");
-                categoryButton.textContent = category.name;
-                categoryButton.onclick = function () {
-                    showCategory(index);
-                };
-                categoryContainer.appendChild(categoryButton);
-            });
-        }
-
-        function showCategory(categoryIndex) {
-            currentCategoryIndex = categoryIndex;
-            clearContainer(chatContainer);
-            clearContainer(answerContainer);
-            displayQuestionButtons();
-        }
-
-        function displayQuestionButtons() {
-            const currentCategory = categories[currentCategoryIndex];
-            currentCategory.questions.forEach((question, index) => {
-                const questionButton = document.createElement("div");
-                questionButton.classList.add("question-button");
-                questionButton.textContent = `${index + 1}. ${question}`;
-                questionButton.onclick = function () {
-                    showAnswer(index);
-                };
-                chatContainer.appendChild(questionButton);
-            });
-        }
-
-        function showAnswer(questionIndex) {
-    const currentCategory = categories[currentCategoryIndex];
-    clearContainer(answerContainer);
-    const answerParagraph = document.createElement("p");
-    answerParagraph.textContent = currentCategory.answers[questionIndex];
-    answerContainer.appendChild(answerParagraph);
-}
-
-function clearContainer(container) {
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
     }
-}
 
-        displayIntroduction();
-    </script>
-     
+            displayIntroduction();
+            </script>
+        
         <div class="page" id="contact">
           <div class="contact-container">
             <form action="mailto:madalinglavanro@gmail.com" method="post" enctype="text/plain">
@@ -258,9 +258,14 @@ function clearContainer(container) {
           </div>
           <div id="confirmation-message"></div> 
         </div>
-        <script src="script.js"></script>
+        
       </main>
      <div class="main-displayed">
+        <h1>Madalin Glavan</h1> <br>
+        <div class="phone">
+            <a href="tel:0032467674870"><i class="fa-solid fa-phone">&nbsp;&nbsp;Call me today</i></a>
+            
+        </div>
             <div class="widgets-zone">
                 <div class="widget weather-widget">
                     <h5 id="location"></h5>
@@ -282,93 +287,47 @@ function clearContainer(container) {
                     <p id="intro-text"></p>
                 </div>
                 
-                <script>
-                    const text = "Welcome to my jungle! ";
-                    let charIndex = 0;
-                    const textContainer = document.getElementById("intro-text");
-                    function type() {
-                        if (charIndex < text.length) {
-                            textContainer.textContent += text[charIndex];
-                            charIndex++;
-                        } else {
-                            clearInterval(interval); 
-                        }
-                    }
-                    const interval = setInterval(type, 100);
-                </script>
-                <div class="phone">
-                    <a href="tel:0032467674870"><i class="fa-solid fa-phone">&nbsp;&nbsp;Call me today</i></a>
-                    <div id="stats-container">                                         
-                        <h1><i class="fa-solid fa-chart-simple"></i>&nbsp;&nbsp;Statistici Profesionale</h1>
-                        <div id="stats">
-                            <p>Programare: <span id="experience">0</span></p>
-                            <p>Clienți: <span id="clients">0</span></p>
-                            <p>Locuri disponibile: <span id="warranty">0</span> </p>
-                        </div>
-                               <script>
-                                
-                                    //profesional stats
-                                    function animateNumbers(finalValues) {
-                                    const duration = 5000;
-                                    const fps = 30; 
-        
-                                    const increment = {};
-                                    const steps = {};
-        
-                                    for (const key in finalValues) {
-                                        increment[key] = finalValues[key] / (duration / 1000 * fps);
-                                        steps[key] = 0;
-                                    }
-        
-                                    function updateValues() {
-                                        let allValuesReached = true;
-        
-                                        for (const key in finalValues) {
-                                            steps[key] += increment[key];
-        
-                                            if (steps[key] <= finalValues[key]) {
-                                                allValuesReached = false;
-                                            }
-        
-                                            document.getElementById(key).innerText = Math.round(steps[key]);
-                                        }
-        
-                                        if (!allValuesReached) {
-                                            requestAnimationFrame(updateValues);
-                                        }
-                                    }
-        
-                                    updateValues();
-                                    }
-        
-                                    const finalValues = {
-                                    experience: 2,
-                                    clients: 5,
-                                    warranty: 5,
-                                    };
-        
-                                    setTimeout(() => {
-                                    animateNumbers(finalValues);
-                                    }, 1000);
-                                        
-                   
-                               </script>   
-                    </div>   
+                <div id="stats-container">                                         
+                    <h1><i class="fa-solid fa-chart-simple"></i>&nbsp;&nbsp; Profesional Stats</h1>
+                    <div id="stats">
+                        <p>Coding: <span id="experience">0</span>&nbsp;&nbsp;y</p>
+                        <p>Clienți: <span id="clients">0</span>&nbsp;&nbsp;active</p>
+                        <p>Freelancer: <span id="warranty">0</span>&nbsp;&nbsp;y</p>
+                    </div>
+                </div>   
+            </div>
+            <div class="news-container">
+                <h1>Profesional events:</h1>
+                <div class="news">
+                    
+                    <div class="news-1">
+                        <h3>Creare și implementare de site-uri web interactive și responsive.</h3>
+                        <p>Procesul meu de dezvoltare a site-urilor implică diverse metode și tehnici specializate. În linii mari, îmi încep proiectele prin a planifica și a proiecta interfața și funcționalitățile, urmând apoi să le implementez cu ajutorul unui set variat de limbaje de programare și tehnologii web. În paralel, acord o atenție deosebită designului și experienței utilizatorului, pentru a asigura o navigare plăcută și eficientă. În final, mă asigur că site-urile rezultate sunt compatibile cu diverse dispozitive și respectă cele mai recente standarde din domeniu.
+                        <img src="img/" alt="">
+                    </div>
+                    <div class="news-2">
+                        <h3>2</h3>
+                        <p></p>
+                        <video controls src="video/"></video>
+                    </div>
+                    <div class="news-3">
+                        <h3>3</h3>
+                        <p></p>
+                        <img src="img/" alt="">
+                    </div>
+                    
                 </div>
             </div>
             <div class="slideshow-container">
+                <h3>Gallery</h3>
                 <div class="slides">
-                  <img src="img/0 (170).jpg" alt="Image 1">
+                  <img src="img/l`authentik dragobete azi.jpg" alt="Image 1">
                   <img src="img/dragobete afis.png" alt="Image 2">
-                  <img src="img/IMG20230316102314.jpg" alt="Image 3">
+                  <img src="img/postare l-authentik.png" alt="Image 3">
                   <img src="img/logo.png" alt="Image 4">
                   <img src="img/madalin glavan.jpg" alt="Image 5">
-                  <!-- Adaugă mai multe imagini aici -->
                 </div>
-              
-                <!-- Buton pentru slide-ul din stânga -->
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <!-- Buton pentru slide-ul din dreapta -->
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 <script>
                     let slideIndex = 0;
@@ -389,13 +348,26 @@ function clearContainer(container) {
                     showSlides();
                     }
 
-                    // Afiseaza slideshow-ul la incarcarea paginii
                     showSlides();
 
                 </script>
             </div>
-              
-            
+            <div id="video-container">
+                <h2>Video Galery</h2>
+                <video controls autoplay loop id="video-player" style="width: 100%; height: 100%;">
+                    <source src="video/video advertising mg.mp4" type="video/mp4">
+                </video>    
+            </div>
+            <div id="playlist">
+                <h2>Playlist</h2>
+                <ol>
+                
+                    <li onclick="changeVideo('video/video drumul hotilor.mp4')">SocialMedia Post <p>description:</p></li>
+                    <li onclick="changeVideo('video/video tshirtcreation.mp4')">T-shirt Design <p>description:</p></li>
+                    <li onclick="changeVideo('video/video advertising mg.mp4')">Madalin Social Media <p>description:</p></li>
+                </ol>
+            </div>        
+        </div>
      </div>
 </body>
 </html>
