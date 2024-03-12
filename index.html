@@ -13,15 +13,12 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">            
+        <nav class="navbar">
             <ul class="nav-links">
+                <li><a href="index.html" data-text="Home"><i class="fa-solid fa-house"></i></a></li>
                 <li><a href="#about-me" data-text="Madalin"><i class="fas fa-user"></i></a></li>
-                <li><a href="#skills" data-text="Skills"><i class="fa-solid fa-hands"></i></a></li>
                 <li><a href="#projects" data-text="Projects"><i class="fa-regular fa-folder"></i></a></li>
-                <li><a href="#contact" data-text="Contact"><i class="fa-regular fa-envelope"></i></a></li>
                 <li><a href="#chatBot" data-text="QandA"><i class="fa-solid fa-question"></i></a></li>
-                <li><a href="#terms-privacy" data-text="Terms"><i class="fa-regular fa-file"></i></a></li>
-                
             </ul>
         </nav>
     </header>
@@ -29,19 +26,13 @@
     <main>
         <div class="page" id="about-me">
             <div class="content-about-me">
-                <h2>About Page</h2>
-                <p>Welcome to the about page!</p>
+                
             </div>
-        </div>
-        <div class="page" id="skills">
-          <div class="content-skills">
-            <h2>Skills Page</h2>
-            <p>Here you can find information about my skills.</p>
-          </div>
         </div>
         <div class="page" id="projects">
           <div class="content-projects">
             <div class="iframe-container">
+                
               <div class="iframe-wrapper">
                 <div class="restaurant">
                   <h2>L`Authentik Restaurant</h2>
@@ -64,327 +55,59 @@
           <div class="chat-container" id="chat-container"></div>
           <div class="category-container" id="category-container"> categories</div>
         </div> 
-            <script>
-            const chatIntroduction = "Pick one category and choese the question! I`m happy to meet you! Q and A  #havefun!";
-            let waitingForNextQuestion = false;
-
-            const categories = [
-                {
-                name: "HTML, CSS, JS Projects",
-            questions: [
-                "What recent projects have you worked on in HTML, CSS, and JavaScript?",
-                "What is your experience using HTML and CSS for web design?",
-                "Which specific JavaScript technologies do you use in your projects?",
-                "What inspires you to choose specific themes or concepts for your recent projects?",
-                "How do you approach the process of designing a web interface, from idea to implementation?",
-                "Have you ever faced major challenges in developing a project, and how did you overcome them?"
-            ],
-            answers: [
-                "I have recently worked on projects featured on the Live Projects page.",
-                "I have extensive experience in developing web interfaces with HTML and CSS.",
-                "I use JavaScript (ES6+) to create interactive and appealing web interfaces.",
-                "I am inspired by the diversity and innovation around me, and the themes of my projects reflect this diversity.",
-                "I start by understanding the purpose and target audience, then create wireframes and prototypes before implementation.",
-                "Of course, each project comes with its own challenges. I tackle these situations through research, collaboration, and continuous improvement."
-            ]
-        },
-        {
-            name: "Photoshop and Illustrator",
-            questions: [
-                "How do you use Photoshop for web design?",
-                "What are your main skills in Illustrator?",
-                "How do you integrate your knowledge of Photoshop and Illustrator into web project development?",
-                "What are the main concepts you learned in your Photoshop and Illustrator specialization courses?",
-                "How do you use animations in your web projects, and how do you think they add value to your users' experience?",
-                "How do you approach the creative process in web design?",
-                "What are your favorite features in Adobe Illustrator?",
-                "How do you integrate illustrations into your design projects?"
-            ],
-            answers: [
-                "I use Photoshop to create graphic elements and background images for websites.",
-                "In Illustrator, I specialize in creating vector graphics and illustrations.",
-                "I use Photoshop and Illustrator to create custom graphic elements and enhance the overall look of my web projects.",
-                "In my courses, I learned about image manipulation, creating vector illustrations, and applying special effects for visually impressive design.",
-                "Animations are an essential part of my creativity. I apply them strategically to highlight certain elements, enhancing interactivity and visual appeal of my web pages.",
-                "I always start with a careful analysis of the project's requirements and goals.",
-                "I enjoy working with the shape creation tools in Illustrator.",
-                "Illustrations add a distinctive and captivating touch to my design."
-            ]
-        },
-        {
-            name: "Coding and Programming",
-            questions: [
-                "What is your preferred programming language and why?",
-                "Can you tell me about a coding project that has been a real success for you?",
-                "How do you ensure that your code is efficient and easy to maintain?",
-                "What particularly attracted you to the field of coding and programming?",
-                "How do you see your long-term evolution in the IT field, and what goals do you set for yourself to achieve?"
-            ],
-            answers: [
-                "I enjoy working with JavaScript due to its versatility.",
-                "With joy, I can share about the recent project, named L'Authentik, which I officially started working on starting January 4, 2024.",
-                "I use clean code principles and conduct regular code reviews.",
-                "Fascination for computers and the ability to manipulate and create things brought me into the world of coding.",
-                "I see my evolution as a continuous learning and application journey, with long-term goals of becoming an expert in certain technologies and contributing to significant projects."
-            ]
-        },
-        {
-            name: "Installation and Configuration of Programs",
-            questions: [
-                "How do you choose the right software for a particular project?",
-                "What is your process for installing and configuring a new application?",
-                "How do you manage software updates and compatibility?"
-            ],
-            answers: [
-                "I analyze the project requirements and choose the right tools for the task.",
-                "Installation and configuration are integral parts of each project, ensuring everything works efficiently.",
-                "Regular updates are managed, and compatibility is carefully checked."
-            ]
-        },
-        {
-            name: "Maintenance and Repairs",
-            questions: [
-                "How do you approach maintaining a site after launch?",
-                "How do you handle errors and security issues in your websites?",
-                "What backup strategies do you use to protect data?"
-            ],
-            answers: [
-                "I ensure that the site is updated and functions correctly through constant monitoring.",
-                "Errors are quickly identified and resolved, and security is a priority.",
-                "Regular backups are essential to protect data against losses."
-            ]
-        },
-        {
-            name: "Pricing",
-            questions: [
-                "What are your standard rates for web design projects?",
-                "Are you willing to offer exclusivity?"
-            ],
-            answers: [
-                "My rates vary depending on the complexity and specific requirements of each project. For a customized quote, please contact me.",
-                "Yes, I am willing to offer exclusivity. I would be delighted to be part of a team!"
-            ]
-        }
-    ];
-
-            let currentQuestionIndex = 0;
-            let currentCategoryIndex = 0;
-            const chatContainer = document.getElementById("chat-container");
-            const categoryContainer = document.getElementById("category-container");
-            const answerContainer = document.getElementById("answer-container");
-
-            function displayIntroduction() {
-                displayText(chatIntroduction);
-                setTimeout(() => {
-                    waitingForNextQuestion = true;
-                    displayCategoryButtons();
-                }, 1000);
-            }
-
-            function displayText(text) {
-                const paragraph = document.createElement('p');
-                paragraph.textContent = text;
-                chatContainer.appendChild(paragraph);
-                chatContainer.scrollTop = chatContainer.scrollHeight;
-            }
-
-            function displayCategoryButtons() {
-                categories.forEach((category, index) => {
-                    const categoryButton = document.createElement("div");
-                    categoryButton.classList.add("category-button");
-                    categoryButton.textContent = category.name;
-                    categoryButton.onclick = function () {
-                        showCategory(index);
-                    };
-                    categoryContainer.appendChild(categoryButton);
-                });
-            }
-
-            function showCategory(categoryIndex) {
-                currentCategoryIndex = categoryIndex;
-                clearContainer(chatContainer);
-                clearContainer(answerContainer);
-                displayQuestionButtons();
-            }
-
-            function displayQuestionButtons() {
-                const currentCategory = categories[currentCategoryIndex];
-                currentCategory.questions.forEach((question, index) => {
-                    const questionButton = document.createElement("div");
-                    questionButton.classList.add("question-button");
-                    questionButton.textContent = `${index + 1}. ${question}`;
-                    questionButton.onclick = function () {
-                        showAnswer(index);
-                    };
-                    chatContainer.appendChild(questionButton);
-                });
-            }
-
-            function showAnswer(questionIndex) {
-        const currentCategory = categories[currentCategoryIndex];
-        clearContainer(answerContainer);
-        const answerParagraph = document.createElement("p");
-        answerParagraph.textContent = currentCategory.answers[questionIndex];
-        answerContainer.appendChild(answerParagraph);
-    }
-
-    function clearContainer(container) {
-        while (container.firstChild) {
-            container.removeChild(container.firstChild);
-        }
-    }
-
-            displayIntroduction();
-            </script>
-        
-        <div class="page" id="contact">
-          <div class="contact-container">
-            <form action="mailto:madalinglavanro@gmail.com" method="post" enctype="text/plain">
-              <label for="nume">nume:</label>
-              <input type="text" id="nume" name="nume">
-              <label for="email">e-mail:</label>
-              <input type="email" id="email" name="email">
-              <label for="mesaj">mesaj:</label>
-              <textarea id="mesaj" name="mesaj"></textarea>
-              <input type="submit" value="Trimite">
-            </form>
-          </div>
-          <div id="confirmation-message"></div> 
-        </div>
-        <div class="page" id="terms-privacy"> 
-            <img src="img/logo.png" alt="">
-                            <p>Welcome to my website! By using my services, you agree to the following terms:</p>
-                    
-                            <h4>1. Acceptance of Terms</h4>
-                            <p>If something doesn't sit right with you, feel free to reach out, and we can chat about it.</p>
-                    
-                            <h4>2. Our Journey Together</h4>
-                            <p>As we dive into working together, please be mindful of your responsibilities, and let's make this collaboration awesome!</p>
-                    
-                            <h4>3. Privacy Matters</h4>
-                            <p>Your privacy is crucial. Check out my Privacy Policy to understand how your info is handled—it's important stuff!</p>
-                    
-                            <h4>4. Adapt and Grow</h4>
-                            <p>Like everything in life, things might change. I'll keep you posted, and your continued use means you're on board with any updates.</p>
-                    
-                            <h4>5. Let's Talk</h4>
-                            <p>If you ever have questions or just want to say hello, drop me a line at madalinglavanro@gmail.com</p>
-                    
-                            <p>Thanks for being here! Let's create something amazing together.</p>
-                    
-                            <p>Cheers,<br>
-                                Madalin Glavan, Your Web Design Partner</p>
-        </div>
-        
       </main>
      <div class="main-displayed">
-        <h1>Madalin Glavan</h1> <br>
-        <div class="phone">
-            <a href="tel:0032467674870"><i class="fa-solid fa-phone">&nbsp;&nbsp;Call me today</i></a>
-            
-        </div>
-            <div class="widgets-zone">
-                <div class="widget weather-widget">
-                    <h5 id="location"></h5>
-                    <div class="weather-icon">
-                        <img src="" alt="Icon">
-                    </div>
-                    <div class="weather-info">
-                        <div class="weather-details">
-                            <p class="temperature"><span></span>°C</p>
-                            <p class="description"><span></span></p>
-                        </div>
-                    </div>
-                    <div class="widget clock-container">
-                        <div class="time" id="time"></div>
-                        <div class="date" id="date"></div>
-                    </div>
-                </div>
                 <div id="intro-text-container">
                     <p id="intro-text"></p>
                 </div>
-                
-                <div id="stats-container">                                         
-                    <h1><i class="fa-solid fa-chart-simple"></i>&nbsp;&nbsp; Profesional Stats</h1>
-                    <div id="stats">
-                        <p>Coding: <span id="experience">0</span>&nbsp;&nbsp;y</p>
-                        <p>Clienți: <span id="clients">0</span>&nbsp;&nbsp;active</p>
-                        <p>Freelancer: <span id="warranty">0</span>&nbsp;&nbsp;y</p>
+            
+                <div class="my-store-idea">
+                    <div class="store">
+                        <h1><i class="fa-solid fa-store"></i>&nbsp;&nbsp; my store </h1>
+                        <!-- Categorie: Încălțăminte -->
+                        <div class="category" data-target="shoes">Încălțăminte</div>
+                        <div class="products-container" id="shoes-products">
+                            <!-- Produs 1 -->
+                            <div class="product" data-price="50">
+                                <img src="img/shoes.webp" alt="Pantofi 1">
+                                <h3>Pantofi 1</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <span class="price">50 Euro</span>
+                                <button class="add-to-cart" onclick="addToCart('Pantofi 1', 50)"><i class="fa-solid fa-cart-shopping"></i></button>
+                            </div>
+                            <!-- Produs 2 -->
+                            <div class="product" data-price="60">
+                                <img src="img/jordan2.png" alt="Pantofi 2">
+                                <h3>Pantofi 2</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <span class="price">60 Euro</span>
+                                <button class="add-to-cart" onclick="addToCart('Pantofi 2', 60)"><i class="fa-solid fa-cart-shopping"></i></button>
+                            </div>
+                        </div>
+                        
+                        <!-- Categorie: Tricouri -->
+                        <div class="category" data-target="t-shirts">Tricouri</div>
+                        <div class="products-container" id="t-shirts-products">
+                            <!-- Produs 3 -->
+                            <div class="product" data-price="30">
+                                <img src="img/tshirt2.webp" alt="Tricou 1">
+                                <h3>Tricou 1</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <span class="price">30 Euro</span>
+                                <button class="add-to-cart" onclick="addToCart('Tricou 1', 30)"><i class="fa-solid fa-cart-shopping"></i></button>
+                            </div>
+                            <!-- Produs 4 -->
+                            <div class="product" data-price="25">
+                                <img src="img/tshirt.webp" alt="Tricou 2">
+                                <h3>Tricou 2</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <span class="price">25 Euro</span>
+                                <button class="add-to-cart" onclick="addToCart('Tricou 2', 25)"><i class="fa-solid fa-cart-shopping"></i></button>
+                            </div>
+                        </div>
                     </div>
-                </div>   
-            </div>
-            <div class="news-container">
-                <h1>Profesional events:</h1>
-                <div class="news">
-                    
-                    <div class="news-1">
-                        <h3>Creare și implementare de site-uri web interactive și responsive.</h3>
-                        <p>Procesul meu de dezvoltare a site-urilor implică diverse metode și tehnici specializate. În linii mari, îmi încep proiectele prin a planifica și a proiecta interfața și funcționalitățile, urmând apoi să le implementez cu ajutorul unui set variat de limbaje de programare și tehnologii web. În paralel, acord o atenție deosebită designului și experienței utilizatorului, pentru a asigura o navigare plăcută și eficientă. În final, mă asigur că site-urile rezultate sunt compatibile cu diverse dispozitive și respectă cele mai recente standarde din domeniu.
-                        <img src="img/" alt="">
-                    </div>
-                    <div class="news-2">
-                        <h3>2</h3>
-                        <p></p>
-                        <video controls src="video/"></video>
-                    </div>
-                    <div class="news-3">
-                        <h3>3</h3>
-                        <p></p>
-                        <img src="img/" alt="">
-                    </div>
-                    
                 </div>
             </div>
-            <div class="slideshow-container">
-                <h3>Gallery</h3>
-                <div class="slides">
-                  <img src="img/l`authentik dragobete azi.jpg" alt="Image 1">
-                  <img src="img/dragobete afis.png" alt="Image 2">
-                  <img src="img/postare l-authentik.png" alt="Image 3">
-                  <img src="img/logo.png" alt="Image 4">
-                  <img src="img/madalin glavan.jpg" alt="Image 5">
-                </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                <script>
-                    let slideIndex = 0;
-
-                    function showSlides() {
-                    const slides = document.querySelector('.slides');
-                    slides.style.transform = `translateX(${-slideIndex * 100}%)`;
-                    }
-
-                    function plusSlides(n) {
-                    slideIndex += n;
-                    const slides = document.querySelectorAll('.slides img');
-                    if (slideIndex >= slides.length) {
-                        slideIndex = 0;
-                    } else if (slideIndex < 0) {
-                        slideIndex = slides.length - 2;
-                    }
-                    showSlides();
-                    }
-
-                    showSlides();
-
-                </script>
-            </div>
-            <div id="video-container">
-                <h2>Video Galery</h2>
-                <video controls autoplay loop id="video-player" style="width: 100%; height: 100%;">
-                    <source src="video/video advertising mg.mp4" type="video/mp4">
-                </video>    
-            </div>
-            <div id="playlist">
-                <h2>Playlist</h2>
-                <ol>
-                
-                    <li onclick="changeVideo('video/video drumul hotilor.mp4')">SocialMedia Post <p>description:</p></li>
-                    <li onclick="changeVideo('video/video tshirtcreation.mp4')">T-shirt Design <p>description:</p></li>
-                    <li onclick="changeVideo('video/video advertising mg.mp4')">Madalin Social Media <p>description:</p></li>
-                </ol>
-            </div>        
         </div>
-     </div>
 </body>
 </html>

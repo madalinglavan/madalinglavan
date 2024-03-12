@@ -17,131 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-//ceas
-function updateTime() {
-  const timeElement = document.getElementById('time');
-  const dateElement = document.getElementById('date');
-
-  const now = new Date();
-  const hours = String(now.getHours()).padStart(2, '0');
-  const minutes = String(now.getMinutes()).padStart(2, '0');
-  const seconds = String(now.getSeconds()).padStart(2, '0');
-  const day = String(now.getDate()).padStart(2, '0');
-  const month = String(now.getMonth() + 1).padStart(2, '0');
-  const year = now.getFullYear();
-
-  const timeString = `${hours}:${minutes}:${seconds}`;
-  const dateString = `${day}/${month}/${year}`;
-
-  timeElement.textContent = timeString;
-  dateElement.textContent = dateString;
-}
-  setInterval(updateTime, 1000);
-  updateTime();
-  
-
-  //vremea
-
-  document.addEventListener('DOMContentLoaded', function () {
-    var apiKey = '658ab63cff086fa13b7cf1215d8a20ed';
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-            var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=' + apiKey;
-
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    var temperature = data.main.temp - 273.15;
-                    var description = data.weather[0].description;
-                    var iconUrl = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
-                    var location = data.name;
-
-                    document.querySelector('.temperature span').textContent = temperature.toFixed(1);
-                    document.querySelector('.description span').textContent = description;
-                    document.querySelector('.weather-icon img').src = iconUrl;
-                    document.querySelector('#location').textContent = location;
-                })
-                .catch(error => {
-                    console.error('Eroare:', error);
-                });
-        });
-    }
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  const newsContainers = document.querySelectorAll('.news > div');
-
-  newsContainers.forEach(container => {
-      const title = container.querySelector('h3');
-      const paragraph = container.querySelector('p');
-      const media = container.querySelector('img') || container.querySelector('video');
-
-      title.addEventListener('click', function () {
-          if (paragraph.style.display === 'none' || paragraph.style.display === '') {
-              paragraph.style.display = 'block';
-              if (media) {
-                  media.style.display = 'block';
-              }
-          } else {
-              paragraph.style.display = 'none';
-              if (media) {
-                  media.style.display = 'none';
-              }
-          }
-      });
-  });
-});   
-
-
-
-    //profesional stats
-    function animateNumbers(finalValues) {
-      const duration = 5000;
-      const fps = 30; 
-
-      const increment = {};
-      const steps = {};
-
-      for (const key in finalValues) {
-          increment[key] = finalValues[key] / (duration / 1000 * fps);
-          steps[key] = 0;
-      }
-
-      function updateValues() {
-          let allValuesReached = true;
-
-          for (const key in finalValues) {
-              steps[key] += increment[key];
-
-              if (steps[key] <= finalValues[key]) {
-                  allValuesReached = false;
-              }
-
-              document.getElementById(key).innerText = Math.round(steps[key]);
-          }
-
-          if (!allValuesReached) {
-              requestAnimationFrame(updateValues);
-          }
-      }
-
-      updateValues();
-      }
-
-      const finalValues = {
-      experience: 2,
-      clients: 5,
-      warranty: 15,
-      };
-
-      setTimeout(() => {
-      animateNumbers(finalValues);
-      }, 1000);
-                          
                         
-      const text = "Welcome to my jungle! ";
+      const text = "BadDOG-Developer";
       let charIndex = 0;
       const textContainer = document.getElementById("intro-text");
       function type() {
@@ -206,3 +83,197 @@ if (playlistItems.length > 0) {
 }
 };
 
+document.addEventListener("DOMContentLoaded", function () {
+  const categories = document.querySelectorAll(".category");
+  const productsContainers = document.querySelectorAll(".products-container");
+
+  categories.forEach((category) => {
+      category.addEventListener("click", function () {
+          const target = category.dataset.target;
+
+          productsContainers.forEach(container => {
+              container.style.display = "none";
+          });
+
+          const selectedContainer = document.querySelector(`#${target}-products`);
+          if (selectedContainer) {
+              selectedContainer.style.display = "block";
+          }
+      });
+  });
+});
+
+
+
+
+
+const chatIntroduction = "Pick one category and choese the question! I`m happy to meet you! Q and A  #havefun!";
+            let waitingForNextQuestion = false;
+
+            const categories = [
+                {
+                name: "HTML, CSS, JS Projects",
+            questions: [
+                "What recent projects have you worked on in HTML, CSS, and JavaScript?",
+                "What is your experience using HTML and CSS for web design?",
+                "Which specific JavaScript technologies do you use in your projects?",
+                "What inspires you to choose specific themes or concepts for your recent projects?",
+                "How do you approach the process of designing a web interface, from idea to implementation?",
+                "Have you ever faced major challenges in developing a project, and how did you overcome them?"
+            ],
+            answers: [
+                "I have recently worked on projects featured on the Live Projects page.",
+                "I have extensive experience in developing web interfaces with HTML and CSS.",
+                "I use JavaScript (ES6+) to create interactive and appealing web interfaces.",
+                "I am inspired by the diversity and innovation around me, and the themes of my projects reflect this diversity.",
+                "I start by understanding the purpose and target audience, then create wireframes and prototypes before implementation.",
+                "Of course, each project comes with its own challenges. I tackle these situations through research, collaboration, and continuous improvement."
+            ]
+        },
+        {
+            name: "Photoshop and Illustrator",
+            questions: [
+                "How do you use Photoshop for web design?",
+                "What are your main skills in Illustrator?",
+                "How do you integrate your knowledge of Photoshop and Illustrator into web project development?",
+                "What are the main concepts you learned in your Photoshop and Illustrator specialization courses?",
+                "How do you use animations in your web projects, and how do you think they add value to your users' experience?",
+                "How do you approach the creative process in web design?",
+                "What are your favorite features in Adobe Illustrator?",
+                "How do you integrate illustrations into your design projects?"
+            ],
+            answers: [
+                "I use Photoshop to create graphic elements and background images for websites.",
+                "In Illustrator, I specialize in creating vector graphics and illustrations.",
+                "I use Photoshop and Illustrator to create custom graphic elements and enhance the overall look of my web projects.",
+                "In my courses, I learned about image manipulation, creating vector illustrations, and applying special effects for visually impressive design.",
+                "Animations are an essential part of my creativity. I apply them strategically to highlight certain elements, enhancing interactivity and visual appeal of my web pages.",
+                "I always start with a careful analysis of the project's requirements and goals.",
+                "I enjoy working with the shape creation tools in Illustrator.",
+                "Illustrations add a distinctive and captivating touch to my design."
+            ]
+        },
+        {
+            name: "Coding and Programming",
+            questions: [
+                "What is your preferred programming language and why?",
+                "Can you tell me about a coding project that has been a real success for you?",
+                "How do you ensure that your code is efficient and easy to maintain?",
+                "What particularly attracted you to the field of coding and programming?",
+                "How do you see your long-term evolution in the IT field, and what goals do you set for yourself to achieve?"
+            ],
+            answers: [
+                "I enjoy working with JavaScript due to its versatility.",
+                "With joy, I can share about the recent project, named L'Authentik, which I officially started working on starting January 4, 2024.",
+                "I use clean code principles and conduct regular code reviews.",
+                "Fascination for computers and the ability to manipulate and create things brought me into the world of coding.",
+                "I see my evolution as a continuous learning and application journey, with long-term goals of becoming an expert in certain technologies and contributing to significant projects."
+            ]
+        },
+        {
+            name: "Installation and Configuration of Programs",
+            questions: [
+                "How do you choose the right software for a particular project?",
+                "What is your process for installing and configuring a new application?",
+                "How do you manage software updates and compatibility?"
+            ],
+            answers: [
+                "I analyze the project requirements and choose the right tools for the task.",
+                "Installation and configuration are integral parts of each project, ensuring everything works efficiently.",
+                "Regular updates are managed, and compatibility is carefully checked."
+            ]
+        },
+        {
+            name: "Maintenance and Repairs",
+            questions: [
+                "How do you approach maintaining a site after launch?",
+                "How do you handle errors and security issues in your websites?",
+                "What backup strategies do you use to protect data?"
+            ],
+            answers: [
+                "I ensure that the site is updated and functions correctly through constant monitoring.",
+                "Errors are quickly identified and resolved, and security is a priority.",
+                "Regular backups are essential to protect data against losses."
+            ]
+        },
+        {
+            name: "Pricing",
+            questions: [
+                "What are your standard rates for web design projects?",
+                "Are you willing to offer exclusivity?"
+            ],
+            answers: [
+                "My rates vary depending on the complexity and specific requirements of each project. For a customized quote, please contact me.",
+                "Yes, I am willing to offer exclusivity. I would be delighted to be part of a team!"
+            ]
+        }
+    ];
+
+            let currentQuestionIndex = 0;
+            let currentCategoryIndex = 0;
+            const chatContainer = document.getElementById("chat-container");
+            const categoryContainer = document.getElementById("category-container");
+            const answerContainer = document.getElementById("answer-container");
+
+            function displayIntroduction() {
+                displayText(chatIntroduction);
+                setTimeout(() => {
+                    waitingForNextQuestion = true;
+                    displayCategoryButtons();
+                }, 1000);
+            }
+
+            function displayText(text) {
+                const paragraph = document.createElement('p');
+                paragraph.textContent = text;
+                chatContainer.appendChild(paragraph);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+
+            function displayCategoryButtons() {
+                categories.forEach((category, index) => {
+                    const categoryButton = document.createElement("div");
+                    categoryButton.classList.add("category-button");
+                    categoryButton.textContent = category.name;
+                    categoryButton.onclick = function () {
+                        showCategory(index);
+                    };
+                    categoryContainer.appendChild(categoryButton);
+                });
+            }
+
+            function showCategory(categoryIndex) {
+                currentCategoryIndex = categoryIndex;
+                clearContainer(chatContainer);
+                clearContainer(answerContainer);
+                displayQuestionButtons();
+            }
+
+            function displayQuestionButtons() {
+                const currentCategory = categories[currentCategoryIndex];
+                currentCategory.questions.forEach((question, index) => {
+                    const questionButton = document.createElement("div");
+                    questionButton.classList.add("question-button");
+                    questionButton.textContent = `${index + 1}. ${question}`;
+                    questionButton.onclick = function () {
+                        showAnswer(index);
+                    };
+                    chatContainer.appendChild(questionButton);
+                });
+            }
+
+            function showAnswer(questionIndex) {
+        const currentCategory = categories[currentCategoryIndex];
+        clearContainer(answerContainer);
+        const answerParagraph = document.createElement("p");
+        answerParagraph.textContent = currentCategory.answers[questionIndex];
+        answerContainer.appendChild(answerParagraph);
+    }
+
+    function clearContainer(container) {
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+    }
+
+            displayIntroduction();

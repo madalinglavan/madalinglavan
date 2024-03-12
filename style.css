@@ -56,6 +56,10 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 
 .nav-links li {
@@ -67,7 +71,7 @@ body {
   position: relative;
   display: inline-block;
   padding: 10px;
-  color: #ff0000;
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease;
   text-shadow: 1px 1px 2px #000000;
@@ -130,44 +134,27 @@ body {
 }
 
 .main-displayed{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: auto;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+
+  height: 80vh;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
     
 }
-#chatBot{
+#chatBot,
+#about-me,
+#projects
+{
   position: relative;
   width: 100%;
-
   height: 90vh;
 }
 
-#about-me{
-  position: relative;
-  width: 100%;
 
-  height: 90vh;
-}
-#skills{
-  position: relative;
-  width: 100%;
-
-  height: 90vh;
-}
-#projects{
-  position: relative;
-  width: 100%;
-
-  height: 90vh;
-}
 .content-projects {
   width: 100%;
   display: flex;
-  overflow-x: auto;
+  flex-direction: column;
+  overflow-x: scroll;
   scroll-snap-type: x mandatory;
 }
 
@@ -289,7 +276,7 @@ input[type="submit"]:hover {
 }
 
 .category-button:hover {
-  background-color: #0056b3;
+  background-color: #7d8287;
 }
 
 .question-button {
@@ -317,62 +304,16 @@ input[type="submit"]:hover {
 }
 
 
-
-.widgets-zone{
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
+#intro-text-container {
   text-align: center;
-  align-items: center;
-  grid-gap: 10px;
-  width: 100%;
-  height: fit-content;
-  margin-top: 20px;
-}
-.widget {
-  width: 100%;
-  position: relative;
-  box-sizing: border-box;
-
+  margin-bottom: 20px;
 }
 
-.clock-container {
-  position: relative;
-
-}
-
-.time, .date, .weather-widget h5 {
-  text-align: center;
-  font-size: .7rem;
-  text-decoration: solid;
-  text-shadow: 3px 3px 8px black;
-  color: #fff;
-}
-
-.weather-icon {
-  text-align: center;
-
-}
-
-
-.weather-icon img {
-  width: 65px; 
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.weather-details {
-  text-align: center;
-  font-family: cursive;
-  font-size: .7rem;
-}
-
-.temperature, .description {
-  margin: 5px 0;
+#intro-text {
+  font-size: 24px;
   font-weight: bold;
 }
+
 .phone{
 
 }
@@ -568,21 +509,93 @@ input[type="submit"]:hover {
   background-color: #000000bd;
   width: 100%;
   height: 100vh;
-  overflow-x: scroll;
+
+}
+.content-terms-privacy{
+  top: 0;
 }
 #terms-privacy img{
   width: 20%;
 }
 #terms-privacy h4{
-  padding: 10px;
+  padding: 2%;
   line-height: 1.6;
   color: rgb(6, 49, 3);
-  background-color: #ffffff;
+  background-color: #dedede;
   text-shadow: 3px 4px 6px black;
 }
 
+.content-about-me{
+  display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
 
+.category {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+}
 
+.products-container {
+  display: none;
+}
+
+.product {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: 30vh;
+  margin-bottom: 10px;
+}
+
+.product h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.product p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.add-to-cart {
+  width: 100px;
+  background-color: #2ecc71;
+  color: #000000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #27ae60;
+}
 
 
 
@@ -608,6 +621,10 @@ input[type="submit"]:hover {
     justify-content: space-between;
     padding: 0;
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .nav-links {
@@ -618,11 +635,13 @@ input[type="submit"]:hover {
     display: flex;
     justify-content: center;
     padding: 10px;
+    
   }
 
   .nav-links li {
     margin-bottom: 20px;
     width: 100%; 
+    
   }
   .nav-links li a i {
     font-size: 24px;
@@ -630,12 +649,7 @@ input[type="submit"]:hover {
   }
 
   .nav-links li a {
-
-    align-items: center; 
-    text-decoration: none;
-    padding: 2px; 
-    transition: background-color 0.3s ease;
-    color: #ff0000;
+   
   }
   main{
     position: relative;
